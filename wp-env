@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get the first parameter.
+# If the first parameter is empty, set it to "start".
+COMMAND=${1:-start}
+
+# Get all remaining parameters.
+FLAGS=${@:2}
+
+# Separate the flags from the command.
+# If the flags are not empty, set it to "--".
+# Else, set it to an empty string.
+SEP=${FLAGS:+ -- }
+
+npm run wp-env $COMMAND$SEP$FLAGS
