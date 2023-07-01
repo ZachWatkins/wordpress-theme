@@ -1,6 +1,8 @@
 # WordPress Theme
 
-A template for WordPress theme development.
+WordPress Theme is a fork of the Twenty Twenty-Three theme meant to demonstrate how to develop a WordPress theme with little to no dependency on production website data and files and while separating the WordPress core files from the development environment.
+
+The goal is a reliable, portable codebase with well-defined dependencies and minimal time for someone to make their first pull request when they have never seen this code before.
 
 ## wp-env
 
