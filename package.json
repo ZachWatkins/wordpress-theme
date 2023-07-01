@@ -4,6 +4,11 @@
   "description": "An example WordPress theme repository which simplifies development.",
   "main": "index.js",
   "scripts": {
+    "start": "wp-env start",
+    "start:update": "wp-env start --update",
+    "stop": "wp-env stop",
+    "fresh": "wp-env clean all && wp-env start",
+    "remove": "wp-env destroy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "wp-env": "wp-env"
   },
