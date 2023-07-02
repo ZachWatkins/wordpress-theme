@@ -6,6 +6,7 @@
   "scripts": {
     "start": "wp-env start",
     "start:update": "wp-env start --update",
+    "seed": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/seed-database.php",
     "stop": "wp-env stop",
     "fresh": "wp-env clean all && wp-env start",
     "remove": "wp-env destroy",
