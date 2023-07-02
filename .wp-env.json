@@ -1,5 +1,8 @@
 {
     "core": null,
     "phpVersion": "8.1",
-    "themes": [ "." ]
+    "themes": [ "." ],
+    "config": {
+      "WP_DEBUG_DISPLAY": true
+    }
 }
