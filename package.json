@@ -6,11 +6,13 @@
   "scripts": {
     "start": "wp-env start",
     "start:update": "wp-env start --update",
-    "seed": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/seed-database.php",
+    "db:seed-php": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/database.php",
+    "db:seed-sql": "wp-env run cli wp db import wp-content/themes/wordpress-theme/.config/database.sql",
     "stop": "wp-env stop",
-    "fresh": "wp-env clean all && wp-env start",
+    "clean": "wp-env clean all && wp-env start",
     "remove": "wp-env destroy",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "query": "wp-env run cli wp db query",
     "wp-env": "wp-env"
   },
   "repository": {

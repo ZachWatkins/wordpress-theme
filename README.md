@@ -8,15 +8,18 @@ The goal is a reliable, portable codebase with well-defined dependencies and min
 
 The following command line scripts will run and manage Docker containers for your local WordPress development environment.
 
-| Command                | Description                                                         |
-| ---------------------- | ------------------------------------------------------------------- |
-| `npm run start`        | Start Docker containers                                             |
-| `npm run start:update` | Start Docker containers and update WordPress to the latest version. |
-| `npm run seed`         | Run the database seeder in `./.config/seed-database.php`            |
-| `npm run stop`         | Stop Docker containers                                              |
-| `npm run fresh`        | Reset the database, reinstall WordPress, and restart the containers |
-| `npm run destroy`      | Destroy the Docker containers                                       |
-| `npm run wp-env`       | Run the base `wp-env` command with your own commands and arguments  |
+| Command                  | Description                                                         |
+| ------------------------ | ------------------------------------------------------------------- |
+| `npm run start`          | Start Docker containers                                             |
+| `npm run start:update`   | Start Docker containers and update WordPress to the latest version. |
+| `npm run stop`           | Stop Docker containers                                              |
+| `npm run destroy`        | Destroy the Docker containers                                       |
+| `npm run seed:php`       | Run the database seeder in `./.config/seed.php`                     |
+| `npm run seed:sql`       | Run the database seeder in `./.config/seed.sql`                     |
+| `npm run clean`          | Reset the database, reinstall WordPress, and restart the containers |
+| `npm run query [string]` | Run a query string against the database                             |
+| `npm run wp-env`         | Run the base `wp-env` command with your own commands and arguments  |
+| `docker ps`              | See all running Docker containers                                   |
 
 ## wp-env
 
