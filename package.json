@@ -4,6 +4,7 @@
   "description": "An example WordPress theme repository which simplifies development.",
   "main": "index.js",
   "scripts": {
+    "wp-env": "wp-env",
     "start": "wp-env start",
     "start:update": "wp-env start --update",
     "db:seed-php": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/database.php",
@@ -13,7 +14,7 @@
     "remove": "wp-env destroy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "query": "wp-env run cli wp db query",
-    "wp-env": "wp-env"
+		"composer": "wp-env run cli --env-cwd=wp-content/themes/wordpress-theme composer"
   },
   "repository": {
     "type": "git",
