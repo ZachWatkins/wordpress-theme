@@ -12,6 +12,7 @@
     "stop": "wp-env stop",
     "clean": "wp-env clean all && wp-env start",
     "remove": "wp-env destroy",
+    "test:js": "jest",
     "test:php": "wp-env run tests-wordpress --env-cwd=wp-content/themes/wordpress-theme ./vendor/bin/pest",
     "query": "wp-env run cli wp db query",
 		"composer": "wp-env run wordpress --env-cwd=wp-content/themes/wordpress-theme composer"
