@@ -5,9 +5,6 @@
     "scripts": {
         "test": "./vendor/bin/pest"
     },
-    "require-dev": {
-        "pestphp/pest": "^2.8"
-    },
     "license": "GPL-2.0+",
     "autoload": {
         "psr-4": {
@@ -17,12 +14,23 @@
     "authors": [
         {
             "name": "Zachary K. Watkins"
+        },
+        {
+            "name": "wordpressdotorg"
         }
     ],
-    "minimum-stability": "stable",
     "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
-    }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.8"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
