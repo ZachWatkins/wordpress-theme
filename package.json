@@ -1,39 +1,43 @@
 {
-  "name": "wordpress-theme",
-  "version": "1.0.0",
-  "description": "An example WordPress theme repository which simplifies development.",
-  "main": "index.js",
-  "scripts": {
-    "wp-env": "wp-env",
-    "start": "wp-env start",
-    "start:update": "wp-env start --update",
-    "db:seed-php": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/database.php",
-    "db:seed-sql": "wp-env run cli wp db import wp-content/themes/wordpress-theme/.config/database.sql",
-    "stop": "wp-env stop",
-    "clean": "wp-env clean all && wp-env start",
-    "remove": "wp-env destroy",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write .",
-    "test": "npm run test:js && npm run test:php",
-    "test:js": "jest",
-    "test:php": "wp-env run tests-wordpress --env-cwd=wp-content/themes/wordpress-theme ./vendor/bin/pest",
-    "query": "wp-env run cli wp db query",
+	"name": "wordpress-theme",
+	"version": "1.0.0",
+	"private": true,
+	"description": "An example WordPress theme repository which simplifies development.",
+	"main": "index.js",
+	"scripts": {
+		"wp-env": "wp-env",
+		"start": "wp-env start",
+		"start:update": "wp-env start --update",
+		"db:seed-php": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/database.php",
+		"db:seed-sql": "wp-env run cli wp db import wp-content/themes/wordpress-theme/.config/database.sql",
+		"stop": "wp-env stop",
+		"clean": "wp-env clean all && wp-env start",
+		"remove": "wp-env destroy",
+		"lint": "prettier --check --debug-check .",
+		"lint:fix": "prettier --write .",
+		"test": "npm run test:js && npm run test:php",
+		"test:js": "jest",
+		"test:php": "wp-env run tests-wordpress --env-cwd=wp-content/themes/wordpress-theme ./vendor/bin/pest",
+		"query": "wp-env run cli wp db query",
 		"composer": "wp-env run wordpress --env-cwd=wp-content/themes/wordpress-theme composer"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zachwatkins/wordpress-theme.git"
-  },
-  "author": "Zachary K. Watkins",
-  "license": "GPL-2.0+",
-  "bugs": {
-    "url": "https://github.com/zachwatkins/wordpress-theme/issues"
-  },
-  "homepage": "https://github.com/zachwatkins/wordpress-theme#readme",
-  "devDependencies": {
-    "@wordpress/env": "^8.2.0",
-    "@wordpress/prettier-config": "^2.19.0",
-    "jest": "^29.6.0",
-    "prettier": "npm:wp-prettier@^2.8.5"
-  }
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zachwatkins/wordpress-theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/zachwatkins/wordpress-theme/issues"
+	},
+	"engines": {
+		"node": ">=18.16.1"
+	},
+	"author": "Zachary K. Watkins",
+	"license": "GPL-2.0+",
+	"homepage": "https://github.com/zachwatkins/wordpress-theme#readme",
+	"devDependencies": {
+		"@wordpress/env": "^8.2.0",
+		"@wordpress/prettier-config": "^2.19.0",
+		"jest": "^29.6.0",
+		"prettier": "npm:wp-prettier@^2.8.5"
+	}
 }
