@@ -302,7 +302,7 @@
 					"textTransform": "capitalize"
 				}
 			},
-			"core/comment-author-name":{
+			"core/comment-author-name": {
 				"elements": {
 					"link": {
 						":hover": {
