@@ -1,36 +1,36 @@
 {
-    "name": "zachwatkins/wordpress-theme",
-    "description": "A fork of the Twenty Twenty-Three WordPress theme to demonstrate how to provide a portable development environment for a theme.",
-    "type": "project",
-    "scripts": {
-        "test": "./vendor/bin/pest"
-    },
-    "license": "GPL-2.0+",
-    "autoload": {
-        "psr-4": {
-            "ZW\\WordpressTheme\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Zachary K. Watkins"
-        },
-        {
-            "name": "wordpressdotorg"
-        }
-    ],
-    "config": {
-        "optimize-autoloader": true,
-        "classmap-authoritative": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
-    },
-    "require-dev": {
-        "pestphp/pest": "^2.8"
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+	"name": "zachwatkins/wordpress-theme",
+	"description": "A fork of the Twenty Twenty-Three WordPress theme to demonstrate how to provide a portable development environment for a theme.",
+	"type": "project",
+	"scripts": {
+		"test": "./vendor/bin/pest"
+	},
+	"license": "GPL-2.0+",
+	"autoload": {
+		"psr-4": {
+			"ZW\\WordpressTheme\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Zachary K. Watkins"
+		},
+		{
+			"name": "wordpressdotorg"
+		}
+	],
+	"config": {
+		"optimize-autoloader": true,
+		"classmap-authoritative": true,
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"allow-plugins": {
+			"pestphp/pest-plugin": true
+		}
+	},
+	"require-dev": {
+		"pestphp/pest": "^2.8"
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true
 }

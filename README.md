@@ -19,6 +19,8 @@ The following command line scripts will run and manage Docker containers for you
 | `npm run clean`          | Reset the database, reinstall WordPress, and restart the containers |
 | `npm run query [string]` | Run a query string against the database                             |
 | `npm run wp-env`         | Run the base `wp-env` command with your own commands and arguments  |
+| `npm run lint`           | Run Prettier on the codebase                                        |
+| `npm run lint:fix`       | Run Prettier on the codebase and fix issues                         |
 | `docker ps`              | See all running Docker containers                                   |
 
 ## wp-env
