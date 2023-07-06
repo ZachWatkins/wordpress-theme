@@ -4,3 +4,4 @@ package-lock.json
 composer.lock
 LICENSE.md
 docs/wp-env.md
+*.html
