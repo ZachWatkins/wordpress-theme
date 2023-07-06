@@ -1,7 +1,9 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",,
-    "editor.formatOnPaste": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnPaste": false,
+	"prettier.configPath": ".prettierrc.json",
+	"prettier.useEditorConfig": false,
 	"intelephense.stubs": [
 		"apache",
 		"bcmath",
