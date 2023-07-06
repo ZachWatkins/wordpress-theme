@@ -2,6 +2,7 @@
     "recommendations": [
         "johnbillion.vscode-wordpress-hooks",
         "bmewburn.vscode-intelephense-client",
-        "m1guelpf.better-pest"
+        "m1guelpf.better-pest",
+        "esbenp.prettier-vscode"
     ]
 }
