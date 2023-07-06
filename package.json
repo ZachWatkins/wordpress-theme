@@ -13,6 +13,7 @@
     "clean": "wp-env clean all && wp-env start",
     "remove": "wp-env destroy",
     "lint": "prettier --check .",
+    "lint:fix": "prettier --write .",
     "test": "npm run test:js && npm run test:php",
     "test:js": "jest",
     "test:php": "wp-env run tests-wordpress --env-cwd=wp-content/themes/wordpress-theme ./vendor/bin/pest",
