@@ -4,8 +4,8 @@
 	"type": "project",
 	"scripts": {
 		"test": "./vendor/bin/pest",
-		"lint": "phpcs --standard=phpcs.xml.dist",
-		"lint:fix": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
+		"lint": "phpcs --standard=phpcs.xml.dist --report-full --report-summary --basepath=.",
+		"lint:fix": "phpcbf --standard=phpcs.xml.dist --report-summary --basepath=.",
 		"lint:errors": "@phpcs -n"
 	},
 	"license": "GPL-2.0+",
