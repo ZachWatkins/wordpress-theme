@@ -47,7 +47,7 @@ jobs:
               continue-on-error: true
 
             - name: Create PHP CodeSniffer Body
-                  vendor/bin/phpcs --report-file=phpcs_body.txt --file-list=changed_files.txt --standard=phpcs.xml.dist --report-width=120 --report=code -q -w -s
+              run: vendor/bin/phpcs --report-file=phpcs_body.txt --file-list=changed_files.txt --standard=phpcs.xml.dist --report-width=120 --report=code -q -w -s
               if: ${{ steps.phpcs.outputs.exit_code != 0 }}
               continue-on-error: true
 
