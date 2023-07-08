@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Seed the database.
  *
