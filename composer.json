@@ -4,14 +4,9 @@
 	"type": "project",
 	"scripts": {
 		"test": "./vendor/bin/pest",
-		"phpcs": "phpcs --standard=phpcs.xml.dist",
-		"phpcbf": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
-		"format": "@phpcbf --filter=gitmodified",
-		"format:all": "@phpcbf",
-		"lint": "@phpcs --filter=gitmodified",
-		"lint:errors": "@phpcs -n --filter=gitmodified",
-		"lint:all": "@phpcs -n",
-		"lint:all-errors": "@phpcs -n"
+		"lint": "phpcs --standard=phpcs.xml.dist",
+		"lint:fix": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
+		"lint:errors": "@phpcs -n"
 	},
 	"license": "GPL-2.0+",
 	"autoload": {
