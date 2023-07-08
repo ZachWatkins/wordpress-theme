@@ -3,7 +3,10 @@
  * Title: Hidden No Results Content
  * Slug: wordpresstheme/hidden-no-results-content
  * Inserter: no
+ *
+ * @package WordPress Theme
  */
+
 ?>
 <!-- wp:paragraph -->
 <p>
