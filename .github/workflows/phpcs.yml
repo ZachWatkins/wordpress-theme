@@ -36,7 +36,7 @@ jobs:
               run: composer install --no-progress --prefer-dist --no-interaction --no-autoloader
 
             - name: List changed files
-              run: git diff --name-only -r HEAD^1 HEAD
+              run: git diff --name-only -r HEAD^1 HEAD > changed_files.txt
 
             - name: Run PHP CodeSniffer
-              run: git diff --name-only -r HEAD^1 HEAD | vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* {} ';'
+              run: vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* --file-list=changed_files.txt
