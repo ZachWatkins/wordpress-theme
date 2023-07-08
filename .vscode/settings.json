@@ -4,6 +4,10 @@
 	"editor.formatOnPaste": false,
 	"prettier.configPath": ".prettierrc.json",
 	"prettier.useEditorConfig": false,
+	"phpCodeSniffer.autoExecutable": true,
+	"phpCodeSniffer.exclude": [ "**/vendor/**", "**/node_modules/**" ],
+	"phpCodeSniffer.standard": "Custom",
+	"phpCodeSniffer.standardCustom": "phpcs.xml.dist",
 	"intelephense.stubs": [
 		"apache",
 		"bcmath",

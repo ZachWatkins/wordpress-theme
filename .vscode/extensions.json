@@ -3,6 +3,7 @@
 		"johnbillion.vscode-wordpress-hooks",
 		"bmewburn.vscode-intelephense-client",
 		"m1guelpf.better-pest",
-		"esbenp.prettier-vscode"
+		"esbenp.prettier-vscode",
+		"obliviousharmony.vscode-php-codesniffer"
 	]
 }
