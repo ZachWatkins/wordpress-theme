@@ -6,7 +6,7 @@ The goal is a reliable, portable codebase with well-defined dependencies and min
 
 ## Commands
 
-The following command line scripts will run and manage Docker containers for your local WordPress development environment.
+The following command line scripts allow you to start and manage the Docker environment and interact with your code.
 
 | Command                  | Description                                                         |
 | ------------------------ | ------------------------------------------------------------------- |
@@ -19,8 +19,9 @@ The following command line scripts will run and manage Docker containers for you
 | `npm run clean`          | Reset the database, reinstall WordPress, and restart the containers |
 | `npm run query [string]` | Run a query string against the database                             |
 | `npm run wp-env`         | Run the base `wp-env` command with your own commands and arguments  |
-| `npm run lint`           | Run Prettier on the codebase                                        |
-| `npm run lint:fix`       | Run Prettier on the codebase and fix issues                         |
+| `npm run test`           | Run Jest and Pest tests for JavaScript and PHP code                 |
+| `npm run lint`           | Run Prettier and PHPCS on the codebase                              |
+| `npm run lint:fix`       | Run Prettier and PHPCS on the codebase and fix issues               |
 | `docker ps`              | See all running Docker containers                                   |
 
 ## wp-env
