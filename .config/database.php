@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Seed the database.
+ *
+ * @package WordPress Theme
+ */
+
 global $wpdb;
 
 // Set option "seeded" to "true".
