@@ -1,6 +1,9 @@
 {
 	"editor.formatOnSave": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[php]": {
+		"editor.defaultFormatter": "obliviousharmony.vscode-php-codesniffer"
+	},
 	"editor.formatOnPaste": false,
 	"prettier.configPath": ".prettierrc.json",
 	"prettier.useEditorConfig": false,
