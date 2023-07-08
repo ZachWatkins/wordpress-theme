@@ -1,0 +1,28 @@
+name: PHP CodeSniffer
+
+on:
+    pull_request:
+        paths:
+            - '**.php'
+            - '**.js'
+            - '**.css'
+            - '**.html'
+
+jobs:
+    phpcs:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.1'
+
+            - name: Install Composer dependencies
+              run: composer install --no-progress --no-suggest
+
+            - name: Run PHP CodeSniffer
+              run: vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* .
