@@ -1,4 +1,9 @@
 <?php
+/**
+ * Bootstrap file for Pest.
+ *
+ * @package WordPress Theme
+ */
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +16,7 @@
 |
 */
 
-// uses(Tests\TestCase::class)->in('Feature');
+// uses(Tests\TestCase::class)->in('Feature');.
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +47,9 @@ expect()->extend(
 |
 */
 
+/**
+ * Sample function.
+ */
 function something() {
 	// ..
 }
