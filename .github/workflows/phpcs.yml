@@ -39,4 +39,4 @@ jobs:
               run: composer install --no-progress --prefer-dist --no-interaction --no-autoloader
 
             - name: Run PHP CodeSniffer
-              run: vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* ${{ steps.changed-files.outputs.changed_files }}
+              run: echo ${{ steps.changed-files.outputs.changed_files }} | vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* {} \;
