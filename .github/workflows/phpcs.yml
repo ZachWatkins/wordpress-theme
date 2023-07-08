@@ -19,9 +19,6 @@ jobs:
               with:
                   fetch-depth: 2
 
-            - name: Get changes
-              run: git diff --name-only -r HEAD^1 HEAD
-
             - name: Cache Composer dependencies
               uses: actions/cache@v2
               with:
@@ -39,4 +36,4 @@ jobs:
               run: composer install --no-progress --prefer-dist --no-interaction --no-autoloader
 
             - name: Run PHP CodeSniffer
-              run: echo ${{ steps.changed-files.outputs.changed_files }} | vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* {} \;
+              run: git diff --name-only -r HEAD^1 HEAD | vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* {} \;
