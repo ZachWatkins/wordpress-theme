@@ -25,5 +25,9 @@ jobs:
             - name: Install Composer dependencies
               run: composer install --no-progress --no-suggest
 
+            - name: Get changed files
+              id: changes
+              run: echo "::set-output name=files::$(git diff --name-only HEAD $(git merge-base HEAD ${{ github.event.pull_request.base.sha }}))"
+
             - name: Run PHP CodeSniffer
-              run: vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* .
+              run: vendor/bin/phpcs --standard=phpcs.xml.dist --ignore=*/vendor/*,*/node_modules/* ${{ steps.changes.outputs.files }}
