@@ -9,7 +9,6 @@
 	<file>./.config</file>
 	<file>./parts</file>
 	<file>./patterns</file>
-	<file>./src</file>
 	<file>./styles</file>
 	<file>./templates</file>
 	<file>./tests</file>
