@@ -3,7 +3,10 @@
  * Title: Hidden 404
  * Slug: wordpresstheme/hidden-404
  * Inserter: no
+ *
+ * @package WordPress Theme
  */
+
 ?>
 <!-- wp:spacer {"height":"var(--wp--preset--spacing--30)"} -->
 <div style="height:var(--wp--preset--spacing--30)" aria-hidden="true" class="wp-block-spacer"></div>

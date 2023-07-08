@@ -4,7 +4,10 @@
  * Slug: wordpresstheme/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer
+ *
+ * @package WordPress Theme
  */
+
 ?>
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">

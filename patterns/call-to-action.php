@@ -5,7 +5,10 @@
  * Categories: featured
  * Keywords: Call to action
  * Block Types: core/buttons
+ *
+ * @package WordPress Theme
  */
+
 ?>
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide">
