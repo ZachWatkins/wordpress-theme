@@ -23,7 +23,7 @@ jobs:
                   php-version: '8.1'
 
             - name: Install Composer dependencies
-              run: composer install --no-progress --prefer-dist --optimize-autoloader --no-interaction -- dealerdirect/phpcodesniffer-composer-installer squizlabs/php_codesniffer wp-coding-standards/wpcs
+              run: composer install --no-progress --prefer-dist --no-interaction --no-autoloader
 
             - name: Get changed files
               id: changes
