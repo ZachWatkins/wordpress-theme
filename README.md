@@ -4,6 +4,16 @@ WordPress Theme is a fork of the Twenty Twenty-Three theme meant to demonstrate 
 
 The goal is a reliable, portable codebase with well-defined dependencies and minimal time for someone to make their first pull request when they have never seen this code before.
 
+## Requirements
+
+You will need the following tools installed on your computer:
+
+-   [Docker](https://www.docker.com/products/docker-desktop)
+-   [Node.js](https://nodejs.org/en/download/)
+-   [git](https://git-scm.com/downloads)
+
+I prefer to also have PHP and Composer installed on my computer, but they are not required. I include a batch script for Windows installation here: `bin\windows-install-php-composer.bat`.
+
 ## Commands
 
 The following command line scripts allow you to start and manage the Docker environment and interact with your code.
@@ -32,7 +42,7 @@ The following command line scripts allow you to start and manage the Docker envi
 Ensure that Docker is running, then:
 
 ```shell
-$ cd /path/to/a/wordpress/plugin
+$ cd /path/to/a/wordpress/plugin-or-theme
 $ npm -g i @wordpress/env
 $ wp-env start
 ```
