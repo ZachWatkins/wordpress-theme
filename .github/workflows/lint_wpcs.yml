@@ -1,4 +1,4 @@
-name: PHP CodeSniffer
+name: Lint files with WordPress Coding Standards
 
 on:
     pull_request:
@@ -8,6 +8,10 @@ on:
             - '**.css'
             - '**.html'
             - '.github/workflows/phpcs.yml'
+
+concurrency:
+    group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+    cancel-in-progress: true
 
 jobs:
     phpcs:
@@ -19,12 +23,10 @@ jobs:
               with:
                   fetch-depth: 2
 
-            - name: Cache Composer dependencies
-              uses: actions/cache@v2
-              with:
-                  path: vendor
-                  key: composer-${{ hashFiles('composer.lock') }}
-                  restore-keys: composer-
+            - name: List changed files
+              run: |
+                  git diff --name-only -r HEAD^1 HEAD > changed_files.txt
+                  cat changed_files.txt
 
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
@@ -32,13 +34,8 @@ jobs:
                   php-version: '8.1'
                   extensions: mbstring, zip
 
-            - name: Install Composer dependencies
-              run: composer install --no-progress --prefer-dist --no-interaction --no-autoloader
-
-            - name: List changed files
-              run: |
-                  git diff --name-only -r HEAD^1 HEAD > changed_files.txt
-                  cat changed_files.txt
+            - name: Set up Composer
+              uses: 'zachwatkins/.github/.github/actions/php-composer-setup/action.yml@main'
 
             - name: Create PHP CodeSniffer Summary
               id: phpcs

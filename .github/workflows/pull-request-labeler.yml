@@ -1,0 +1,8 @@
+name: Pull Request Labeler
+
+on:
+    pull_request_target:
+
+jobs:
+    label:
+        uses: zachwatkins/.github/.github/workflows/pull-request-labeler.yml@main
