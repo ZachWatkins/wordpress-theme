@@ -36,6 +36,7 @@ The following command line scripts allow you to start and manage the Docker envi
 | `npm run query [string]` | Run a query string against the database                   |
 | `npm run wp-env`         | Run the base `wp-env` command                             |
 | `docker ps`              | See all running Docker containers                         |
+| `bin/gitprune`           | Remove all local branches that have been merged           |
 
 ## wp-env
 
