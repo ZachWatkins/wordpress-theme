@@ -1,0 +1,9 @@
+name: Repo Stale Check
+
+on:
+    schedule:
+        - cron: '20 16 * * *' # Run every day at 16:20 UTC / 8:20 PST
+
+jobs:
+    stale_contributor:
+        uses: 'zachwatkins/.github/.github/workflows/triage-stale-check.yml@main'
