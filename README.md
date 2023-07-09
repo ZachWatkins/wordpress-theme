@@ -4,16 +4,6 @@ WordPress Theme is a fork of the Twenty Twenty-Three theme meant to demonstrate 
 
 The goal is a reliable, portable codebase with well-defined dependencies and minimal time for someone to make their first pull request when they have never seen this code before.
 
-## System Requirements for Development
-
-You will need the following tools installed on your computer:
-
--   [Docker](https://www.docker.com/products/docker-desktop)
--   [Node.js](https://nodejs.org/en/download/)
--   [git](https://git-scm.com/downloads)
-
-I prefer to also have PHP and Composer installed on my computer, but they are not required. I include a batch script for Windows installation here: `bin\windows-install-php-composer.bat`.
-
 ## Commands
 
 The following command line scripts allow you to start and manage the Docker environment and interact with your code.
@@ -53,3 +43,49 @@ The local environment will be available at http://localhost:8888 (Username: `adm
 The database credentials are: user `root`, password `password`. For a comprehensive guide on connecting directly to the database, refer to [Accessing the MySQL Database](https://github.com/WordPress/gutenberg/blob/trunk/docs/contributors/code/getting-started-with-code-contribution.md#accessing-the-mysql-database).
 
 For documentation on .wp-env.json options see here: https://github.com/WordPress/gutenberg/tree/trunk/packages/env#wp-envjson
+
+## System Requirements for Development
+
+You will need the following tools installed on your computer:
+
+-   [Docker](https://www.docker.com/products/docker-desktop)
+-   [Node.js](https://nodejs.org/en/download/)
+-   [git](https://git-scm.com/downloads)
+
+### Windows
+
+**Docker**
+
+```powershell
+winget install -e --id Docker.DockerDesktop
+```
+
+**Node.js**
+
+```powershell
+winget install -e --id OpenJS.Nodejs
+```
+
+**git**
+
+```powershell
+winget install -e --id Git.Git
+```
+
+**PHP and Composer**
+
+```powershell
+bin\windows-install-php-composer.bat
+```
+
+**WSL2 with Ubuntu**
+
+This is optional and not needed, but I wanted to include it here because it is a great way to run Linux on Windows.
+
+```powershell
+wsl --update
+wsl --install -d Ubuntu
+wsl --set-version Ubuntu 2
+wsl --set-default-version 2
+wsl --set-default Ubuntu
+```
