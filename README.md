@@ -4,11 +4,17 @@ WordPress Theme is a fork of the Twenty Twenty-Three theme meant to demonstrate 
 
 The goal is a reliable, portable codebase with well-defined dependencies and minimal time for someone to make their first pull request when they have never seen this code before.
 
+![GitHub Package.json Version](https://img.shields.io/github/package-json/v/zachwatkins/wordpress-theme)
+![Code Size](https://img.shields.io/github/languages/code-size/zachwatkins/wordpress-theme)
+![License](https://img.shields.io/github/license/zachwatkins/wordpress-theme)
+![Open Issues](https://img.shields.io/github/issues-raw/zachwatkins/wordpress-theme)
+
 **Table of Contents**
 
 -   [Commands](#commands)
 -   [wp-env](#wp-env)
 -   [Installing System Requirements for Development](#system-requirements-for-development)
+-   [Issues](#issues)
 
 ## Commands
 
@@ -98,3 +104,11 @@ wsl --set-version Ubuntu 2
 wsl --set-default-version 2
 wsl --set-default Ubuntu
 ```
+
+## Issues
+
+![Open Issues](https://img.shields.io/github/issues-raw/zachwatkins/wordpress-theme)
+![Open Bug Issues](https://img.shields.io/github/issues/zachwatkins/wordpress-theme/bug)
+![Open Feature Issues](https://img.shields.io/github/issues/zachwatkins/wordpress-theme/feature)
+![Open Pull Requests](https://img.shields.io/github/issues-pr-raw/zachwatkins/wordpress-theme)
+![Last Commit](https://img.shields.io/github/last-commit/zachwatkins/wordpress-theme)
