@@ -8,21 +8,24 @@ The goal is a reliable, portable codebase with well-defined dependencies and min
 
 The following command line scripts allow you to start and manage the Docker environment and interact with your code.
 
-| Command                  | Description                                                         |
-| ------------------------ | ------------------------------------------------------------------- |
-| `npm run start`          | Start Docker containers                                             |
-| `npm run start:update`   | Start Docker containers and update WordPress to the latest version. |
-| `npm run stop`           | Stop Docker containers                                              |
-| `npm run destroy`        | Destroy the Docker containers                                       |
-| `npm run seed:php`       | Run the database seeder in `./.config/seed.php`                     |
-| `npm run seed:sql`       | Run the database seeder in `./.config/seed.sql`                     |
-| `npm run clean`          | Reset the database, reinstall WordPress, and restart the containers |
-| `npm run query [string]` | Run a query string against the database                             |
-| `npm run wp-env`         | Run the base `wp-env` command with your own commands and arguments  |
-| `npm run test`           | Run Jest and Pest tests for JavaScript and PHP code                 |
-| `npm run lint`           | Run Prettier and PHPCS on the codebase                              |
-| `npm run lint:fix`       | Run Prettier and PHPCS on the codebase and fix issues               |
-| `docker ps`              | See all running Docker containers                                   |
+| Command                  | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| `npm run start`          | Start the development environment                         |
+| `npm run start:update`   | Start the development environment and update WordPress    |
+| `npm run stop`           | Stop Docker containers                                    |
+| `npm run clean`          | Reset the database and restart the environment            |
+| `npm run destroy`        | Destroy the Docker containers                             |
+| `npm run lint`           | Check code style and logic for WordPress coding standards |
+| `npm run lint:fix`       | Fix simple code style inconsistencies                     |
+| `npm run test`           | Test JavaScript and PHP                                   |
+| `npm run test:js`        | Test JavaScript                                           |
+| `npm run test:php`       | Test PHP                                                  |
+| `npm run seed:php`       | Run the database seeder in `./.wp-env/database.php`       |
+| `npm run seed:sql`       | Run the database seeder in `./.wp-env/database.sql`       |
+| `npm run composer`       | Use Composer in the wordpress environment                 |
+| `npm run query [string]` | Run a query string against the database                   |
+| `npm run wp-env`         | Run the base `wp-env` command                             |
+| `docker ps`              | See all running Docker containers                         |
 
 ## wp-env
 
