@@ -1,0 +1,4 @@
+triage:
+    - '/.*/'
+help_wanted:
+    - '(critical|urgent)'
