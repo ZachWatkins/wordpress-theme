@@ -6,6 +6,10 @@ on:
             - opened
             - synchronize
 
+permissions:
+    contents: read
+    pull-requests: write
+
 jobs:
     label:
         uses: zachwatkins/.github/.github/workflows/pull-request-labeler.yml@main
