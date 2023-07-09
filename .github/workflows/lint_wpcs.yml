@@ -7,7 +7,7 @@ on:
             - '**.js'
             - '**.css'
             - '**.html'
-            - '.github/workflows/phpcs.yml'
+            - '.github/workflows/lint_wpcs.yml'
 
 concurrency:
     group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
@@ -35,7 +35,7 @@ jobs:
                   extensions: mbstring, zip
 
             - name: Set up Composer
-              uses: 'zachwatkins/.github/.github/actions/php-composer-setup/action.yml@main'
+              uses: 'zachwatkins/.github/.github/actions/php-composer-setup@main'
 
             - name: Create PHP CodeSniffer Summary
               id: phpcs

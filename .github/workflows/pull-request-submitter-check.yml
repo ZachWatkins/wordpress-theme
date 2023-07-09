@@ -1,4 +1,4 @@
-name: Pull request opened
+name: Notify When Maintainers Cannot Edit
 
 on:
     pull_request_target:
