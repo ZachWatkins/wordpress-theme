@@ -4,6 +4,12 @@ WordPress Theme is a fork of the Twenty Twenty-Three theme meant to demonstrate 
 
 The goal is a reliable, portable codebase with well-defined dependencies and minimal time for someone to make their first pull request when they have never seen this code before.
 
+**Table of Contents**
+
+-   [Commands](#commands)
+-   [wp-env](#wp-env)
+-   [Installing System Requirements for Development](#system-requirements-for-development)
+
 ## Commands
 
 The following command line scripts allow you to start and manage the Docker environment and interact with your code.
@@ -52,31 +58,31 @@ You will need the following tools installed on your computer:
 -   [Node.js](https://nodejs.org/en/download/)
 -   [git](https://git-scm.com/downloads)
 
-### Windows
-
 **Docker**
 
-```powershell
-winget install -e --id Docker.DockerDesktop
-```
+Windows: `winget install -e --id Docker.DockerDesktop`
+Linux: `sudo apt install docker.io`
+Mac with Homebrew: `brew install --cask docker`
 
 **Node.js**
 
-```powershell
-winget install -e --id OpenJS.Nodejs
-```
+Windows: `winget install -e --id OpenJS.Nodejs`
+Linux: `sudo apt install nodejs`
+Mac with Homebrew: `brew install node`
 
 **git**
 
-```powershell
-winget install -e --id Git.Git
-```
+Windows: `winget install -e --id Git.Git`
+Linux: `sudo apt install git`
+Mac with Homebrew: `brew install git`
 
 **PHP and Composer**
 
-```powershell
-bin\windows-install-php-composer.bat
-```
+PHP is not required for development, but it is useful for running Composer and other PHP scripts more quickly in your command line than in the Docker container.
+
+I include a script for installing PHP 8.1 on Windows and Linux. You can run the script from the root of this project:
+
+`bin/install/php-8-1`
 
 **WSL2 with Ubuntu**
 
