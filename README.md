@@ -26,6 +26,7 @@ The following command line scripts allow you to start and manage the Docker envi
 | `npm run test`           | Test JavaScript and PHP                                   |
 | `npm run test:js`        | Test JavaScript                                           |
 | `npm run test:php`       | Test PHP                                                  |
+| `npm run wp`             | Run a WP-CLI command in the environment                   |
 | `npm run seed:php`       | Run the database seeder in `./.wp-env/database.php`       |
 | `npm run seed:sql`       | Run the database seeder in `./.wp-env/database.sql`       |
 | `npm run composer`       | Use Composer in the wordpress environment                 |

@@ -15,6 +15,7 @@
 		"test": "jest && npm run composer run test",
 		"test:js": "jest",
 		"test:php": "npm run composer run test",
+		"wp": "wp-env run cli wp",
 		"db:seed-php": "wp-env run cli wp eval-file database.php",
 		"db:seed-sql": "wp-env run cli wp db import database.sql",
 		"composer": "wp-env run wordpress --env-cwd=wp-content/themes/wordpress-theme composer",
