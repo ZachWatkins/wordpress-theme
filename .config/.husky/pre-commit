@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-staged_files=$(git diff --name-only --cached)
+staged_files=$(git diff --name-only --cached --diff-filter=ACMRT)
 
 echo "$staged_files" | xargs npx prettier --check --debug-check --config "$(dirname -- "$0")/../../.prettierrc.json"
