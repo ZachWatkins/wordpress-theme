@@ -5,21 +5,21 @@
 	"description": "An example WordPress theme repository which simplifies development.",
 	"main": "index.js",
 	"scripts": {
-		"wp-env": "wp-env",
 		"start": "wp-env start",
 		"start:update": "wp-env start --update",
-		"db:seed-php": "wp-env run cli wp eval-file wp-content/themes/wordpress-theme/.config/database.php",
-		"db:seed-sql": "wp-env run cli wp db import wp-content/themes/wordpress-theme/.config/database.sql",
 		"stop": "wp-env stop",
 		"clean": "wp-env clean all && wp-env start",
-		"remove": "wp-env destroy",
+		"destroy": "wp-env destroy",
 		"lint": "prettier --check --debug-check . && npm run composer run lint",
 		"lint:fix": "prettier --write . && npm run composer run lint:fix",
-		"test": "npm run test:js && npm run test:php",
+		"test": "jest && npm run composer run test",
 		"test:js": "jest",
 		"test:php": "npm run composer run test",
+		"db:seed-php": "wp-env run cli wp eval-file database.php",
+		"db:seed-sql": "wp-env run cli wp db import database.sql",
+		"composer": "wp-env run wordpress --env-cwd=wp-content/themes/wordpress-theme composer",
 		"query": "wp-env run cli wp db query",
-		"composer": "wp-env run wordpress --env-cwd=wp-content/themes/wordpress-theme composer"
+		"wp-env": "wp-env"
 	},
 	"repository": {
 		"type": "git",
