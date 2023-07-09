@@ -4,7 +4,7 @@ WordPress Theme is a fork of the Twenty Twenty-Three theme meant to demonstrate 
 
 The goal is a reliable, portable codebase with well-defined dependencies and minimal time for someone to make their first pull request when they have never seen this code before.
 
-## Requirements
+## System Requirements for Development
 
 You will need the following tools installed on your computer:
 
