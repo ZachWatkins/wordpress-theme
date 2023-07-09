@@ -40,6 +40,7 @@
 	"license": "GPL-2.0+",
 	"homepage": "https://github.com/zachwatkins/wordpress-theme#readme",
 	"devDependencies": {
+		"@wordpress/browserslist-config": "5.20.0",
 		"@wordpress/env": "^8.2.0",
 		"@wordpress/prettier-config": "^2.19.0",
 		"husky": "^8.0.3",
