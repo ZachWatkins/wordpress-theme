@@ -33,7 +33,8 @@
 		"url": "https://github.com/zachwatkins/wordpress-theme/issues"
 	},
 	"engines": {
-		"node": ">=18.16.1"
+		"node": ">=18.16.1",
+		"npm": ">=9.5.1"
 	},
 	"author": "Zachary K. Watkins",
 	"license": "GPL-2.0+",
