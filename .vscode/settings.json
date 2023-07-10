@@ -1,10 +1,11 @@
 {
+	"editor.formatOnPaste": false,
 	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "modifications",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[php]": {
 		"editor.defaultFormatter": "obliviousharmony.vscode-php-codesniffer"
 	},
-	"editor.formatOnPaste": false,
 	"prettier.configPath": ".prettierrc.json",
 	"prettier.useEditorConfig": false,
 	"phpCodeSniffer.autoExecutable": true,
@@ -13,6 +14,7 @@
 	"phpCodeSniffer.standardCustom": "phpcs.xml.dist",
 	"intelephense.diagnostics.run": "onSave",
 	"intelephense.environment.phpVersion": "8.1.0",
+	"intelephense.format.enable": false,
 	"intelephense.stubs": [
 		"apache",
 		"bcmath",

@@ -1,9 +1,5 @@
 name: Pull Request Labeler
 
-# **What it does**: Adds one or more labels to new pull requests in the repository based on which files are changed.
-# **Why we have it**: Assist with assigning reviewers to pull requests and tracking changes over time by category.
-# **Who does it impact**: Maintainers, contributors.
-
 on:
     pull_request:
 

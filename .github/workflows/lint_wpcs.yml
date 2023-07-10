@@ -4,9 +4,6 @@ on:
     pull_request:
         paths:
             - '**.php'
-            - '**.js'
-            - '**.css'
-            - '**.html'
             - '.github/workflows/lint_wpcs.yml'
 
 concurrency:
@@ -14,7 +11,7 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    phpcs:
+    wpcs:
         runs-on: ubuntu-latest
 
         steps:
