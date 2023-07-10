@@ -6,6 +6,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "wp-env start",
+		"start:debug": "wp-env start --xdebug=profile,trace,debug",
 		"start:update": "wp-env start --update",
 		"stop": "wp-env stop",
 		"clean": "wp-env clean all && wp-env start",

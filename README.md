@@ -23,6 +23,7 @@ The following command line scripts allow you to start and manage the Docker envi
 | Command                  | Description                                                 |
 | ------------------------ | ----------------------------------------------------------- |
 | `npm run start`          | Start the development environment                           |
+| `npm run start:debug`    | Start the development environment with Xdebug activated     |
 | `npm run start:update`   | Start the development environment and update WordPress      |
 | `npm run stop`           | Stop Docker containers                                      |
 | `npm run clean`          | Reset the database and restart the environment              |
