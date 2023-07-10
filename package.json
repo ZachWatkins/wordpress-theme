@@ -15,6 +15,7 @@
 		"lint:fix": "prettier --write .",
 		"lint:php": "npm run composer run lint",
 		"lint:php:fix": "npm run composer run lint:fix",
+		"logs": "wp-env logs",
 		"test": "jest && npm run composer run test",
 		"test:js": "jest",
 		"test:php": "npm run composer run test",
