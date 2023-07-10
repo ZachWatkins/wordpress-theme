@@ -2,7 +2,6 @@
 	"recommendations": [
 		"johnbillion.vscode-wordpress-hooks",
 		"bmewburn.vscode-intelephense-client",
-		"m1guelpf.better-pest",
 		"esbenp.prettier-vscode",
 		"obliviousharmony.vscode-php-codesniffer",
 		"github.vscode-pull-request-github",

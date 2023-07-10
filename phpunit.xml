@@ -4,23 +4,25 @@
          backupGlobals="false"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
-         bootstrap="vendor/autoload.php"
+         bootstrap="tests/phpunit/bootstrap.php"
          colors="true"
-         failOnRisky="true"
-         failOnWarning="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         convertDeprecationsToExceptions="true"
          processIsolation="false"
-         stopOnError="false"
-         stopOnFailure="false"
-         backupStaticProperties="false"
 >
     <testsuites>
         <testsuite name="default">
-            <directory suffix=".php">./tests</directory>
+            <directory suffix=".php">./tests/phpunit</directory>
         </testsuite>
     </testsuites>
     <source>
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory suffix=".php">./</directory>
         </include>
+        <exclude>
+            <directory>./vendor</directory>
+        </exclude>
     </source>
 </phpunit>
