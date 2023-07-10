@@ -4,9 +4,6 @@ on:
     pull_request:
         paths:
             - '**.php'
-            - '**.js'
-            - '**.css'
-            - '**.html'
             - '.github/workflows/lint_wpcs.yml'
 
 concurrency:
