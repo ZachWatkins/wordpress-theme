@@ -8,8 +8,8 @@
 global $wpdb;
 
 // Set option "seeded" to "true".
-$seeded = get_option( 'seeded' );
-if ( $seeded ) {
+$wordpress_theme_seeded = get_option( 'seeded' );
+if ( $wordpress_theme_seeded ) {
 	echo "Database already seeded.\n";
 	return;
 }
