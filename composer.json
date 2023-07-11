@@ -4,8 +4,8 @@
 	"type": "project",
 	"scripts": {
 		"test": "./vendor/bin/phpunit",
-		"lint": "phpcs --standard=phpcs.xml.dist --report-full --report-summary --basepath=.",
-		"lint:fix": "phpcbf --standard=phpcs.xml.dist --report-summary --basepath=.",
+		"lint": "phpcs --standard=.phpcs.xml.dist --report-full --report-summary --basepath=.",
+		"lint:fix": "phpcbf --standard=.phpcs.xml.dist --report-summary --basepath=.",
 		"lint:errors": "@phpcs -n"
 	},
 	"license": "GPL-2.0+",

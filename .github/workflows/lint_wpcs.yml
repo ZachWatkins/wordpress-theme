@@ -36,12 +36,12 @@ jobs:
 
             - name: Create PHP CodeSniffer Summary
               id: phpcs
-              run: vendor/bin/phpcs --report-file=phpcs_summary.txt --file-list=changed_files.txt --basepath=. --standard=phpcs.xml.dist --report-width=120 --report=summary -q -w
+              run: vendor/bin/phpcs --report-file=phpcs_summary.txt --file-list=changed_files.txt --basepath=. --standard=.phpcs.xml.dist --report-width=120 --report=summary -q -w
               continue-on-error: true
 
             - name: Create PHP CodeSniffer Body
               if: ${{ steps.phpcs.outputs.exit_code != 0 }}
-              run: vendor/bin/phpcs --report-file=phpcs_body.txt --file-list=changed_files.txt --standard=phpcs.xml.dist --report-width=120 --report=code -q -w -s
+              run: vendor/bin/phpcs --report-file=phpcs_body.txt --file-list=changed_files.txt --standard=.phpcs.xml.dist --report-width=120 --report=code -q -w -s
               continue-on-error: true
 
             - name: Show PHP CodeSniffer Output
