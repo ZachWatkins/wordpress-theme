@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default Footer
- * Slug: wordpresstheme/footer-default
+ * Slug: wordpress-theme/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer
  *
@@ -19,8 +19,8 @@
 		<?php
 		printf(
 			/* Translators: WordPress link. */
-			esc_html__( 'Proudly powered by %s', 'wordpresstheme' ),
-			'<a href="' . esc_url( __( 'https://wordpress.org', 'wordpresstheme' ) ) . '" rel="nofollow">WordPress</a>'
+			esc_html__( 'Proudly powered by %s', 'wordpress-theme' ),
+			'<a href="' . esc_url( __( 'https://wordpress.org', 'wordpress-theme' ) ) . '" rel="nofollow">WordPress</a>'
 		)
 		?>
 		</p>
