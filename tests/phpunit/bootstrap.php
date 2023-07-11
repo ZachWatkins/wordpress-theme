@@ -1,30 +1,44 @@
 <?php
 /**
- * PHPUnit bootstrap file.
+ * PHPUnit bootstrap file
  *
- * @package Wordpress_Theme
+ * @package WordPress Theme
  */
 
 // Require composer dependencies.
-require_once dirname( __DIR__, 2 ) . '/vendor/autoload.php';
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
+
+// Try the `wp-phpunit` composer package.
+if ( ! $_tests_dir ) {
+	$_tests_dir = getenv( 'WP_PHPUNIT__DIR' );
+}
 
 if ( ! $_tests_dir ) {
 	$_tests_dir = rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib';
 }
 
 if ( ! file_exists( $_tests_dir . '/includes/functions.php' ) ) {
-	throw new Error( "Could not find {$_tests_dir}/includes/functions.php, have you run bin/install-wp-tests.sh ?" );
+	echo "Could not find $_tests_dir/includes/functions.php" . PHP_EOL; // WPCS: XSS ok.
+	exit( 1 );
 }
 
 // Give access to tests_add_filter() function.
-require_once "{$_tests_dir}/includes/functions.php";
+require_once $_tests_dir . '/includes/functions.php';
+
+// Load the PHPUnit Polyfills library.
+$_phpunit_polyfills_lib = dirname( __DIR__ ) . '/vendor/yoast/phpunit-polyfills/phpunitpolyfills-autoload.php';
+if ( ! file_exists( $_phpunit_polyfills_lib ) ) {
+	echo "Could not find $_phpunit_polyfills_lib, have you run `docker-compose up` in order to install Composer packages?" . PHP_EOL; // WPCS: XSS ok.
+	exit( 1 );
+}
+require_once $_phpunit_polyfills_lib;
 
 /**
  * Registers theme.
  */
-function wordpress_theme_register_theme() {
+function _register_theme() {
 	$theme_dir     = dirname( __DIR__ );
 	$current_theme = basename( $theme_dir );
 	$theme_root    = dirname( $theme_dir );
@@ -52,32 +66,7 @@ function wordpress_theme_register_theme() {
 		}
 	);
 }
-
-tests_add_filter( 'muplugins_loaded', 'wordpress_theme_register_theme' );
-
-/**
- * Adds a wp_die handler for use during tests.
- *
- * If bootstrap.php triggers wp_die, it will not cause the script to fail. This
- * means that tests will look like they passed even though they should have
- * failed. So we throw an exception if WordPress dies during test setup. This
- * way the failure is observable.
- *
- * @param string|WP_Error $message The error message.
- *
- * @throws Exception When a `wp_die()` occurs.
- */
-function wordpress_theme_fail_if_died( $message ) {
-	if ( is_wp_error( $message ) ) {
-		$message = $message->get_error_message();
-	}
-
-	throw new Exception( 'WordPress died: ' . $message );
-}
-tests_add_filter( 'wp_die_handler', 'wordpress_theme_fail_if_died' );
+tests_add_filter( 'muplugins_loaded', '_register_theme' );
 
 // Start up the WP testing environment.
-require "{$_tests_dir}/includes/bootstrap.php";
-
-// Use existing behavior for wp_die during actual test execution.
-remove_filter( 'wp_die_handler', 'fail_if_died' );
+require $_tests_dir . '/includes/bootstrap.php';
