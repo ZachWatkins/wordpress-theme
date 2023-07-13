@@ -48,6 +48,9 @@
 	<rule ref="WordPress.WP.GlobalVariablesOverride.Prohibited">
 	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
 	</rule>
+	<rule ref="Universal.Operators.DisallowShortTernary.Found">
+	    <exclude-pattern>/tests/phpunit/wp-config.php</exclude-pattern>
+	</rule>
 	<rule ref="Squiz.Commenting.InlineComment.InvalidEndChar">
 	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
 	</rule>
