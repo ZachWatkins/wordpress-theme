@@ -5,10 +5,9 @@
  * @package Wordpress_Theme
  */
 
-// Require composer dependencies.
+// Composer autoloader must be loaded before WP_PHPUNIT__DIR will be available
 require_once dirname( __DIR__, 2 ) . '/vendor/autoload.php';
-
-$_tests_dir = getenv( 'WP_TESTS_DIR' );
+$_tests_dir = getenv( 'WP_TESTS_DIR' ) ? getenv( 'WP_TESTS_DIR' ) : getenv( 'WP_PHPUNIT__DIR' );
 
 if ( ! $_tests_dir ) {
 	$_tests_dir = rtrim( sys_get_temp_dir(), '/\\' ) . '/wordpress-tests-lib';
