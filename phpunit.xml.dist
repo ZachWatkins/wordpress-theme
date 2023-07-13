@@ -17,5 +17,6 @@
 	</testsuites>
 	<php>
 		<env name="WP_PHPUNIT__TESTS_CONFIG" value="tests/phpunit/wp-config.php" />
+		<env name="WP_PHPUNIT__DIR" value="tests/phpunit" />
 	</php>
 </phpunit>
