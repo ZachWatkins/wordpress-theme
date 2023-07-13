@@ -37,7 +37,7 @@ define( 'WP_DEBUG', true );
  * DO NOT use a production database or one that is shared with something else.
  */
 
-define( 'DB_NAME', 'testdb' );
+define( 'DB_NAME', 'wptestdb' );
 define( 'DB_USER', 'admin' );
 define( 'DB_PASSWORD', 'password' );
 define( 'DB_HOST', 'localhost' );
