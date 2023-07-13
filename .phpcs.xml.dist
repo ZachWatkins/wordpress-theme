@@ -26,7 +26,7 @@
 	<config name="minimum_supported_wp_version" value="4.6"/>
 	<rule ref="WordPress"/>
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-	    <exclude-pattern>/tests/phpunit/bootstrap.php</exclude-pattern>
+	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
 		<properties>
 			<!-- Value: replace the function, class, and variable prefixes used. Separate multiple prefixes with a comma. -->
 			<property name="prefixes" type="array" value="wordpress_theme"/>
@@ -42,5 +42,19 @@
 		<properties>
 			<property name="blank_line_check" value="true"/>
 		</properties>
+	</rule>
+
+	<!-- Override rules for test files. -->
+	<rule ref="WordPress.WP.GlobalVariablesOverride.Prohibited">
+	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.InlineComment.InvalidEndChar">
+	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FileComment.WrongStyle">
+	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.PHP.CommentedOutCode.Found">
+	    <exclude-pattern>/tests/phpunit/*.php</exclude-pattern>
 	</rule>
 </ruleset>
