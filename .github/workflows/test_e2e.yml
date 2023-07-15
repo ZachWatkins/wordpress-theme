@@ -34,7 +34,7 @@ jobs:
               run: npm run wp-env start
 
             - name: Run Playwright tests
-              run: npm run test:e2e
+              run: npx playwright test
 
             - uses: actions/upload-artifact@v3
               if: always()
