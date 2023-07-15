@@ -43,6 +43,7 @@
 	"license": "GPL-2.0+",
 	"homepage": "https://github.com/zachwatkins/wordpress-theme#readme",
 	"devDependencies": {
+		"@axe-core/playwright": "4.7.3",
 		"@playwright/test": "1.36.1",
 		"@wordpress/browserslist-config": "5.20.0",
 		"@wordpress/env": "^8.2.0",
