@@ -31,9 +31,6 @@ jobs:
             - name: Setup Node.js and install dependencies
               uses: ./.github/actions/setup-node
 
-            - name: Npm build
-              run: npm run build
-
             - name: Install Playwright dependencies
               run: |
                   npx playwright install chromium firefox webkit --with-deps
