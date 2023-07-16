@@ -76,14 +76,7 @@
 		},
 		{
 			"files": [ "test/e2e/**/*.[tj]s" ],
-			"extends": [
-				"plugin:eslint-plugin-playwright/playwright-test",
-				"plugin:@typescript-eslint/base"
-			],
-			"parserOptions": {
-				"tsconfigRootDir": "./",
-				"project": [ "./test/e2e/tsconfig.json" ]
-			},
+			"extends": [ "plugin:eslint-plugin-playwright/playwright-test" ],
 			"rules": {
 				"@wordpress/no-global-active-element": "off",
 				"@wordpress/no-global-get-selection": "off",
@@ -102,10 +95,7 @@
 						"selector": "CallExpression[callee.object.name='page'][callee.property.name='waitForTimeout']",
 						"message": "Prefer page.locator instead."
 					}
-				],
-				"@typescript-eslint/await-thenable": "error",
-				"@typescript-eslint/no-floating-promises": "error",
-				"@typescript-eslint/no-misused-promises": "error"
+				]
 			}
 		},
 		{
