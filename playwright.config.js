@@ -1,4 +1,6 @@
-// @ts-check
+/**
+ * External dependencies
+ */
 const { defineConfig, devices } = require( '@playwright/test' );
 
 /**
