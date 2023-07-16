@@ -29,18 +29,6 @@
 		"@wordpress/data-no-store-string-literals": "error",
 		"import/default": "error",
 		"import/named": "error",
-		"@typescript-eslint/no-restricted-imports": [
-			"error",
-			{
-				"paths": [
-					{
-						"name": "react",
-						"message": "Please use React API through `@wordpress/element` instead.",
-						"allowTypeImports": true
-					}
-				]
-			}
-		],
 		"no-restricted-syntax": [
 			"error",
 			{
