@@ -1,8 +1,6 @@
 /**
  * External dependencies
  */
-const glob = require( 'glob' ).sync;
-
 module.exports = {
 	rootDir: '../../',
 	preset: '@wordpress/jest-preset-default',
