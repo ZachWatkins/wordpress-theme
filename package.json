@@ -24,10 +24,10 @@
 		"test:js": "jest",
 		"test:php": "npm run composer run test",
 		"wp": "wp-env run cli wp",
+		"db:query": "wp-env run cli wp db query",
 		"db:seed-php": "wp-env run cli wp eval-file database.php",
 		"db:seed-sql": "wp-env run cli wp db import database.sql",
 		"composer": "wp-env run wordpress --env-cwd=wp-content/themes/wordpress-theme composer",
-		"query": "wp-env run cli wp db query",
 		"wp-env": "wp-env",
 		"wp-scripts": "wp-scripts",
 		"prepare": "husky install .config/.husky"
