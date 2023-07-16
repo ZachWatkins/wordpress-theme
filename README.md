@@ -7,14 +7,19 @@ The goal is a reliable, portable codebase with well-defined dependencies and min
 ![GitHub Package.json Version](https://img.shields.io/github/package-json/v/zachwatkins/wordpress-theme)
 ![Code Size](https://img.shields.io/github/languages/code-size/zachwatkins/wordpress-theme)
 ![License](https://img.shields.io/github/license/zachwatkins/wordpress-theme)
+
 ![Open Issues](https://img.shields.io/github/issues-raw/zachwatkins/wordpress-theme)
+![Open Bug Issues](https://img.shields.io/github/issues/zachwatkins/wordpress-theme/bug)
+![Open Feature Issues](https://img.shields.io/github/issues/zachwatkins/wordpress-theme/feature)
+![Open Pull Requests](https://img.shields.io/github/issues-pr-raw/zachwatkins/wordpress-theme)
+![Last Commit](https://img.shields.io/github/last-commit/zachwatkins/wordpress-theme)
 
 **Table of Contents**
 
 -   [Commands](#commands)
+-   [Tests](#tests)
 -   [wp-env](#wp-env)
 -   [Installing System Requirements for Development](#system-requirements-for-development)
--   [Issues](#issues)
 
 ## Commands
 
@@ -44,6 +49,16 @@ The following command line scripts allow you to start and manage the Docker envi
 | `npm run wp-env`         | Run the base `wp-env` command                               |
 | `docker ps`              | See all running Docker containers                           |
 | `bin/gitprune`           | Remove all local branches that have been merged             |
+
+## Tests
+
+This theme has a small set of tests to show you how to create your own. Core WordPress code is tested, so I recommend tests for the code you write.
+
+Categories of test included in this theme:
+
+1. **Unit** tests examine the behavior of a small unit of code.
+2. **End to end** tests examine what the end user sees.
+3. **Integration** tests examine compatibility between separate systems.
 
 ## wp-env
 
@@ -106,11 +121,3 @@ wsl --set-version Ubuntu 2
 wsl --set-default-version 2
 wsl --set-default Ubuntu
 ```
-
-## Issues
-
-![Open Issues](https://img.shields.io/github/issues-raw/zachwatkins/wordpress-theme)
-![Open Bug Issues](https://img.shields.io/github/issues/zachwatkins/wordpress-theme/bug)
-![Open Feature Issues](https://img.shields.io/github/issues/zachwatkins/wordpress-theme/feature)
-![Open Pull Requests](https://img.shields.io/github/issues-pr-raw/zachwatkins/wordpress-theme)
-![Last Commit](https://img.shields.io/github/last-commit/zachwatkins/wordpress-theme)
