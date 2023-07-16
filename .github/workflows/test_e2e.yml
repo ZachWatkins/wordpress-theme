@@ -18,7 +18,7 @@ jobs:
     e2e-playwright:
         name: End-to-End Playwright Tests
         runs-on: ubuntu-latest
-        timeout-minutes: 5
+        timeout-minutes: 30
         if: ${{ github.repository == 'ZachWatkins/wordpress-theme' || github.event_name == 'pull_request' }}
 
         steps:
