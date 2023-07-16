@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-const { defineConfig, devices } = require( '@playwright/test' );
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -12,8 +12,8 @@ const { defineConfig, devices } = require( '@playwright/test' );
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-module.exports = defineConfig( {
-	testDir: './tests/e2e',
+const config = defineConfig( {
+	testDir: './test/e2e',
 	/* Maximum time one test can run for. */
 	timeout: 30 * 1000,
 	expect: {
@@ -87,3 +87,5 @@ module.exports = defineConfig( {
 		reuseExistingServer: ! process.env.CI,
 	},
 } );
+
+export default config;
