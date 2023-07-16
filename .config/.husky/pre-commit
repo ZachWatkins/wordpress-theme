@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-staged_files=$(git diff --name-only --cached --diff-filter=ACMRT)
+npx lint-staged
 
-echo "$staged_files" | xargs npx prettier --check --debug-check --ignore-unknown --config "$(dirname -- "$0")/../../.prettierrc.json"
+staged_files=$(git diff --name-only --cached --diff-filter=ACMRT)
 
 # Checking PHP files.
 staged_php_files=()
@@ -14,7 +14,6 @@ for file in $staged_files; do
 done
 
 if [ ${#staged_php_files[@]} -eq 0 ]; then
-    echo "No PHP files to check."
     exit 0
 fi
 
