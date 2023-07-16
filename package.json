@@ -15,6 +15,7 @@
 		"lint": "prettier --check --debug-check .",
 		"lint:fix": "prettier --write .",
 		"lint:lockfile": "node ./bin/validate-package-lock.js",
+		"lint:lockfilenpm": "node ./bin/check-latest-npm.js",
 		"lint:php": "npm run composer run lint",
 		"lint:php:fix": "npm run composer run lint:fix",
 		"logs": "wp-env logs",
