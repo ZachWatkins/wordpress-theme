@@ -27,7 +27,7 @@ const { red, yellow } = chalk;
 // @ts-ignore
 const packageLock = require( '../package.json' );
 
-const dependencies = Object.entries( packageLock.dependencies );
+const dependencies = Object.entries( packageLock.dependencies || {} );
 for ( const [ name, dependency ] of dependencies ) {
 	if ( dependency.resolved === false ) {
 		console.log(
