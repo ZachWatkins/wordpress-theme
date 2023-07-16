@@ -15,7 +15,7 @@
 	<file>./patterns</file>
 	<file>./styles</file>
 	<file>./templates</file>
-	<file>./tests</file>
+	<file>./test</file>
 	<file>./style.css</file>
 
 	<!-- Exclude generated files -->
@@ -26,43 +26,43 @@
 
 	<!-- Do not require docblocks for unit tests -->
 	<rule ref="Squiz.Commenting.FunctionComment.Missing">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.FileComment.Missing">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.ClassComment.Missing">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.ClassComment.SpacingAfter">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.FunctionComment.MissingParamTag">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Generic.Commenting.DocComment.Empty">
-    	<exclude-pattern>tests/*</exclude-pattern>
+    	<exclude-pattern>test/*</exclude-pattern>
     </rule>
 	<rule ref="Generic.Commenting.DocComment.MissingShort">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.VariableComment.Missing">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing">
-		<exclude-pattern>tests/*</exclude-pattern>
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 
 	<!-- Ignore filename error -->
 	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
-		<exclude-pattern>/tests/*</exclude-pattern>
+		<exclude-pattern>/test/*</exclude-pattern>
 	</rule>
 
 	<!-- Exclude php tests from file and class name sniffs (for Core parity). -->
 	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
-		<exclude-pattern>/tests/*</exclude-pattern>
+		<exclude-pattern>/test/*</exclude-pattern>
 	</rule>
 	<rule ref="PEAR.NamingConventions.ValidClassName.Invalid">
-		<exclude-pattern>/tests/*</exclude-pattern>
+		<exclude-pattern>/test/*</exclude-pattern>
 	</rule>
 </ruleset>
