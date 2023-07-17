@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { defineConfig, devices } from '@playwright/test';
+import path from 'path';
 
 /**
  * Read environment variables from file.
@@ -13,7 +14,8 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = defineConfig( {
-	testDir: './test/e2e',
+	testDir: './',
+	outputDir: path.join( process.cwd(), 'artifacts/test-results' ),
 	/* Maximum time one test can run for. */
 	timeout: 30 * 1000,
 	expect: {
@@ -21,7 +23,7 @@ const config = defineConfig( {
 		 * Maximum time expect() should wait for the condition to be met.
 		 * For example in `await expect(locator).toHaveText();`
 		 */
-		timeout: 5000,
+		timeout: 10000,
 	},
 	/* Run tests in files in parallel */
 	fullyParallel: true,
@@ -36,10 +38,31 @@ const config = defineConfig( {
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
-		// baseURL: 'http://127.0.0.1:3000',
+		baseURL: process.env.WP_BASE_URL || 'http://localhost:8889',
 
-		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-		trace: 'on-first-retry',
+		/* Settings used in wordpress/gutenberg */
+		headless: true,
+		viewport: {
+			width: 960,
+			height: 700,
+		},
+		ignoreHTTPSErrors: true,
+		locale: 'en-US',
+		contextOptions: {
+			reducedMotion: 'reduce',
+			strictSelectors: true,
+		},
+		trace: 'retain-on-failure',
+		screenshot: 'only-on-failure',
+		video: 'on-first-retry',
+	},
+
+	/* Run your local dev server before starting the tests */
+	webServer: {
+		command: 'npm run wp-env start',
+		port: 8889,
+		timeout: 120_000, // 120 seconds.
+		reuseExistingServer: true,
 	},
 
 	/* Configure projects for major browsers */
@@ -79,13 +102,6 @@ const config = defineConfig( {
 			use: { ...devices[ 'Desktop Chrome' ], channel: 'chrome' },
 		},
 	],
-
-	/* Run your local dev server before starting the tests */
-	webServer: {
-		command: 'npm run start',
-		url: 'http://localhost:8889',
-		reuseExistingServer: ! process.env.CI,
-	},
 } );
 
 export default config;
