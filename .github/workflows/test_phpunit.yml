@@ -1,0 +1,58 @@
+name: PHPUnit Tests
+on:
+    push:
+        branches:
+            - main
+            - 'release/**'
+    pull_request:
+        branches:
+            - main
+        paths-ignore:
+            - '**.md'
+    workflow_dispatch:
+
+# Cancels all previous workflow runs for pull requests that have not completed.
+concurrency:
+    # The concurrency group contains the workflow name and the branch name for pull requests
+    # or the commit hash for any other events.
+    group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+    cancel-in-progress: true
+
+jobs:
+    phpunit:
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        if: ${{ github.repository == 'ZachWatkins/wordpress-theme' || github.event_name == 'pull_request' }}
+
+        services:
+            mysql:
+                # Update the specific version of MySQL to match the version used on your server.
+                image: mysql:8
+                env:
+                    MYSQL_RANDOM_ROOT_PASSWORD: 1
+                    MYSQL_DATABASE: wp_tests_db
+                    MYSQL_USER: wp_test
+                    MYSQL_PASSWORD: password
+                    MYSQL_HOST: 127.0.0.1
+                ports:
+                    - 3306
+                options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  # Update the specific version of PHP to match the version used on your server.
+                  php-version: '8.1'
+
+            - name: Set up Composer
+              uses: 'zachwatkins/.github/.github/actions/php-composer-setup@main'
+
+            - run: composer run test
+              env:
+                  WP_DB_USER: wp_test
+                  WP_DB_PASS: password
+                  WP_DB_NAME: wp_tests_db
+                  WP_DB_HOST: 127.0.0.1:${{ job.services.mysql.ports[3306] }}
