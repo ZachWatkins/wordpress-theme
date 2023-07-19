@@ -15,4 +15,7 @@
 			<directory prefix="test-" suffix=".php">./test/phpunit/</directory>
 		</testsuite>
 	</testsuites>
+    <php>
+        <env name="WP_PHPUNIT__TESTS_CONFIG" value="test/phpunit/wp-config.php" />
+    </php>
 </phpunit>
