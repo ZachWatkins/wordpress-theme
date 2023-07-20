@@ -1,29 +1,30 @@
-name: PHPUnit Tests
+name: Test
+
+# **What it does**: Runs phpunit for a WordPress plugin or theme.
+# **Why we have it**: Standardize the testing environment for WordPress plugins and themes.
+# **Who does it impact**: Contributors and maintainers.
+
 on:
-    push:
-        branches:
-            - main
-            - 'release/**'
+    workflow_dispatch:
     pull_request:
         branches:
+            - master
             - main
+            - trunk
+        paths:
+            - '**.php'
+            - .github/workflows/test_wordpress_php.yml
         paths-ignore:
             - '**.md'
-    workflow_dispatch:
 
-# Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
-    # The concurrency group contains the workflow name and the branch name for pull requests
-    # or the commit hash for any other events.
-    group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+    group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
     cancel-in-progress: true
 
 jobs:
-    phpunit:
+    test-wordpress:
+        if: github.repository_owner == 'zachwatkins'
         runs-on: ubuntu-latest
-        timeout-minutes: 30
-        if: ${{ github.repository == 'ZachWatkins/wordpress-theme' || github.event_name == 'pull_request' }}
-
         services:
             mysql:
                 # Update the specific version of MySQL to match the version used on your server.
@@ -37,20 +38,17 @@ jobs:
                 ports:
                     - 3306
                 options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
-
         steps:
             - uses: actions/checkout@v3
 
-            - name: Setup PHP
-              uses: shivammathur/setup-php@v2
+            - uses: shivammathur/setup-php@v2
               with:
                   # Update the specific version of PHP to match the version used on your server.
                   php-version: '8.1'
 
-            - name: Set up Composer
-              uses: 'zachwatkins/.github/.github/actions/php-composer-setup@main'
+            - uses: zachwatkins/.github/.github/actions/php-composer-setup@main
 
-            - run: composer run test
+            - run: composer test
               env:
                   WP_DB_USER: wp_test
                   WP_DB_PASS: password
