@@ -1,6 +1,6 @@
 <?php
 
-class Example_Test extends WP_UnitTestCase {
+class TestExample extends WP_UnitTestCase {
 
 	public function test_it_works() {
 		$this->assertTrue( function_exists( 'do_action' ) );
