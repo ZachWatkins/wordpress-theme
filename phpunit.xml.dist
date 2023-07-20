@@ -1,21 +1,20 @@
 <?xml version="1.0"?>
 <phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.2/phpunit.xsd"
 	bootstrap="test/phpunit/bootstrap.php"
 	backupGlobals="false"
 	colors="true"
-	convertErrorsToExceptions="true"
-	convertNoticesToExceptions="true"
-	convertWarningsToExceptions="true"
-	convertDeprecationsToExceptions="true"
 	beStrictAboutTestsThatDoNotTestAnything="true"
 	beStrictAboutOutputDuringTests="true"
+	cacheDirectory=".phpunit.cache"
 >
 	<testsuites>
 		<testsuite name="testing">
 			<directory prefix="test-" suffix=".php">./test/phpunit/</directory>
 		</testsuite>
 	</testsuites>
-    <php>
-        <env name="WP_PHPUNIT__TESTS_CONFIG" value="test/phpunit/wp-config.php" />
-    </php>
+	<php>
+		<env name="WP_PHPUNIT__TESTS_CONFIG" value="test/phpunit/wp-config.php"/>
+	</php>
 </phpunit>
