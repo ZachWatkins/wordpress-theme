@@ -1,4 +1,4 @@
-name: Test
+name: WordPress PHPUnit Test
 
 # **What it does**: Runs phpunit for a WordPress plugin or theme.
 # **Why we have it**: Standardize the testing environment for WordPress plugins and themes.
