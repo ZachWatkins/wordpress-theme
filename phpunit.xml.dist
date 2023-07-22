@@ -7,7 +7,6 @@
 	colors="true"
 	beStrictAboutTestsThatDoNotTestAnything="true"
 	beStrictAboutOutputDuringTests="true"
-	cacheDirectory=".phpunit.cache"
 >
 	<testsuites>
 		<testsuite name="testing">
