@@ -3,7 +3,10 @@
 	"description": "A fork of the Twenty Twenty-Three WordPress theme to demonstrate how to provide a portable development environment for a theme.",
 	"type": "project",
 	"scripts": {
-		"test": "./vendor/bin/phpunit",
+		"test": [
+			"@putenv WP_SQLITE_MODE=enabled",
+			"./vendor/bin/phpunit"
+		],
 		"lint": "phpcs --standard=.phpcs.xml.dist --report-full --report-summary --basepath=.",
 		"lint:fix": "phpcbf --standard=.phpcs.xml.dist --report-summary --basepath=.",
 		"lint:errors": "@phpcs -n"
