@@ -6,6 +6,13 @@ on:
             - 'release/**'
     pull_request:
         branches: [main]
+        paths:
+            - '**.php'
+            - '**.js'
+            - '**.css'
+            - '**.scss'
+            - 'package-lock.json'
+            - .github/workflows/test_e2e.yml
 
 # Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
