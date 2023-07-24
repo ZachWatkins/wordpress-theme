@@ -57,13 +57,14 @@
 		"clean": "wp-env clean all && wp-env start",
 		"destroy": "wp-env destroy",
 		"lint": "concurrently \"npm run lint:lockfile\" \"npm run lint:js\" \"npm run lint:pkg-json\" \"npm run lint:css\"",
-		"lint:css": "wp-scripts lint-style \"**/*.scss\"",
-		"lint:js": "wp-scripts lint-js",
+		"lint:css": "wp-scripts lint-style \"**/*.scss\" --ignore-path=.config/.prettierignore",
+		"lint:js": "wp-scripts lint-js --ignore-path=.config/.prettierignore",
 		"lint:js:fix": "npm run lint:js -- --fix",
 		"lint:lockfile": "node ./bin/validate-package-lock.js",
 		"lint:php": "npm run composer run lint",
 		"lint:php:fix": "npm run composer run lint:fix",
 		"lint:pkg-json": "wp-scripts lint-pkg-json .",
+		"prettier": "prettier --check --config package.json --ignore-path .config/.prettierignore .",
 		"logs": "wp-env logs",
 		"test": "jest && npm run test-unit-php",
 		"test:e2e": "playwright test --project=\"Google Chrome\" --config test/e2e/playwright.config.js",
@@ -93,5 +94,6 @@
 			"npm run lint:lockfile",
 			"node ./bin/check-latest-npm.js"
 		]
-	}
+	},
+	"prettier": "@wordpress/prettier-config"
 }
