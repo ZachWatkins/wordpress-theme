@@ -93,5 +93,6 @@
 			"npm run lint:lockfile",
 			"node ./bin/check-latest-npm.js"
 		]
-	}
+	},
+	"prettier": "@wordpress/prettier-config"
 }

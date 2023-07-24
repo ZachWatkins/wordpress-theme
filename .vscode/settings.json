@@ -6,6 +6,7 @@
 	"[php]": {
 		"editor.defaultFormatter": "obliviousharmony.vscode-php-codesniffer"
 	},
+	"prettier.configPath": ".config/.prettierrc.json",
 	"prettier.ignorePath": ".config/.prettierignore",
 	"prettier.useEditorConfig": false,
 	"phpCodeSniffer.autoExecutable": true,
