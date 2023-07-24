@@ -66,7 +66,7 @@ define( 'NONCE_SALT', '7xGQd(2!:R IS@yB$f?Dm^m52aB-m?%?}V i_8rY&7=,Id4-%XRT5Ql]g
 
 $table_prefix = 'tests_';   // Only numbers, letters, and underscores please!
 
-define( 'WP_TESTS_DOMAIN', 'example.org' );
+define( 'WP_TESTS_DOMAIN', 'localhost' );
 define( 'WP_TESTS_EMAIL', 'admin@example.org' );
 define( 'WP_TESTS_TITLE', 'Test Blog' );
 
