@@ -64,6 +64,7 @@
 		"lint:php": "npm run composer run lint",
 		"lint:php:fix": "npm run composer run lint:fix",
 		"lint:pkg-json": "wp-scripts lint-pkg-json .",
+		"prettier": "prettier --check --config package.json --ignore-path .config/.prettierignore .",
 		"logs": "wp-env logs",
 		"test": "jest && npm run test-unit-php",
 		"test:e2e": "playwright test --project=\"Google Chrome\" --config test/e2e/playwright.config.js",
