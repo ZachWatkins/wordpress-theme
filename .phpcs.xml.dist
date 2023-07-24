@@ -4,21 +4,19 @@
 
 	<!-- What to scan -->
 	<file>.</file>
+	<exclude-pattern>/test/phpunit/wp-config.php</exclude-pattern>
+	<exclude-pattern>/test/phpunit/bootstrap.php</exclude-pattern>
 	<exclude-pattern>/vendor/</exclude-pattern>
 	<exclude-pattern>/node_modules/</exclude-pattern>
 
 	<!-- How to scan -->
 	<!-- Usage instructions: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
 	<!-- Annotated ruleset: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-	<arg value="sp"/> <!-- Show sniff and progress -->
+	<arg value="sp"/><!-- Show sniff and progress -->
 	<arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
 	<arg name="colors"/>
 	<arg name="extensions" value="php"/>
 	<arg name="parallel" value="8"/><!-- Enables parallel processing when available for faster results. -->
-
-	<!-- Rules: Check PHP version compatibility -->
-	<!-- https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions -->
-	<config name="testVersion" value="8.1-"/>
 
 	<!-- Rules: WordPress Coding Standards -->
 	<!-- https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
@@ -26,7 +24,7 @@
 	<config name="minimum_supported_wp_version" value="4.6"/>
 	<rule ref="WordPress"/>
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-	    <exclude-pattern>/test/phpunit/bootstrap.php</exclude-pattern>
+	    <exclude-pattern>/test/phpunit/*.php</exclude-pattern>
 		<properties>
 			<!-- Value: replace the function, class, and variable prefixes used. Separate multiple prefixes with a comma. -->
 			<property name="prefixes" type="array" value="wordpress_theme"/>
@@ -42,5 +40,47 @@
 		<properties>
 			<property name="blank_line_check" value="true"/>
 		</properties>
+	</rule>
+
+	<!-- Do not require docblocks for unit tests -->
+	<rule ref="Squiz.Commenting.FunctionComment.Missing">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FileComment.Missing">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.ClassComment.Missing">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.ClassComment.SpacingAfter">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FunctionComment.MissingParamTag">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Generic.Commenting.DocComment.Empty">
+    	<exclude-pattern>test/*</exclude-pattern>
+    </rule>
+	<rule ref="Generic.Commenting.DocComment.MissingShort">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.VariableComment.Missing">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FunctionCommentThrowTag.Missing">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+
+	<!-- Ignore filename error -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+
+	<!-- Exclude php tests from file and class name sniffs (for Core parity). -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>test/*</exclude-pattern>
+	</rule>
+	<rule ref="PEAR.NamingConventions.ValidClassName.Invalid">
+		<exclude-pattern>test/*</exclude-pattern>
 	</rule>
 </ruleset>

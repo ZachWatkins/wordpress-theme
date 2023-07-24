@@ -3,7 +3,10 @@
 	"description": "A fork of the Twenty Twenty-Three WordPress theme to demonstrate how to provide a portable development environment for a theme.",
 	"type": "project",
 	"scripts": {
-		"test": "./vendor/bin/phpunit",
+		"test": [
+			"@putenv WP_SQLITE_MODE=enabled",
+			"./vendor/bin/phpunit"
+		],
 		"lint": "phpcs --standard=.phpcs.xml.dist --report-full --report-summary --basepath=.",
 		"lint:fix": "phpcbf --standard=.phpcs.xml.dist --report-summary --basepath=.",
 		"lint:errors": "@phpcs -n"
@@ -32,16 +35,26 @@
 		"bin-compat": "full",
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true,
-			"roots/wordpress-core-installer": true
+			"roots/wordpress-core-installer": true,
+			"composer/installers": true
 		}
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-		"phpunit/phpunit": "^10.2",
+		"phpunit/phpunit": "^9.6",
+		"roots/wordpress": "^6.2",
 		"squizlabs/php_codesniffer": "^3.7",
+		"wordpress/sqlite-database-integration": "^2.1",
 		"wp-coding-standards/wpcs": "dev-develop",
+		"wp-phpunit/wp-phpunit": "^6.2",
 		"yoast/phpunit-polyfills": "^2.0"
 	},
+	"repositories": [
+		{
+			"url": "https://github.com/wordpress/sqlite-database-integration.git",
+			"type": "git"
+		}
+	],
 	"minimum-stability": "stable",
 	"prefer-stable": true
 }
