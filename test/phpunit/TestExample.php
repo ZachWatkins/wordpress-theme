@@ -17,4 +17,19 @@ class TestExample extends WP_UnitTestCase {
 			( new ReflectionClass( 'WP_UnitTestCase' ) )->getFileName()
 		);
 	}
+
+	public function test_create_page() {
+		$id = self::factory()->post->create(
+			array(
+				'post_type'    => 'page',
+				'post_title'   => 'Test Create Page',
+				'post_content' => 'Test Create Page Content',
+				'post_status'  => 'publish',
+			)
+		);
+
+		$this->assertNotFalse( $id );
+		$this->assertNotWPError( get_post( $id ) );
+		$this->assertEquals( 'Test Create Page', get_post( $id )->post_title );
+	}
 }
