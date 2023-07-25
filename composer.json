@@ -7,8 +7,8 @@
 			"@putenv WP_SQLITE_MODE=enabled",
 			"./vendor/bin/phpunit"
 		],
-		"lint": "phpcs --standard=.phpcs.xml.dist --report-full --report-summary --basepath=.",
-		"lint:fix": "phpcbf --standard=.phpcs.xml.dist --report-summary --basepath=.",
+		"lint": "phpcs --standard=.config/.phpcs.xml.dist --report-full --report-summary",
+		"lint:fix": "phpcbf --standard=.config/.phpcs.xml.dist --report-summary",
 		"lint:errors": "@phpcs -n"
 	},
 	"license": "GPL-2.0+",
