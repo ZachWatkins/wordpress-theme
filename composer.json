@@ -5,7 +5,7 @@
 	"scripts": {
 		"test": [
 			"@putenv WP_SQLITE_MODE=enabled",
-			"./vendor/bin/phpunit"
+			"./vendor/bin/phpunit -c .config/phpunit.xml.dist"
 		],
 		"lint": "phpcs --standard=.config/.phpcs.xml.dist --report-full --report-summary",
 		"lint:fix": "phpcbf --standard=.config/.phpcs.xml.dist --report-summary",
