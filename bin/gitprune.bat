@@ -5,7 +5,9 @@ setlocal enabledelayedexpansion
 set merged=
 
 for /f "tokens=*" %%a in ('git branch --merged ^| findstr /v "*" ^| findstr /v "master" ^| findstr /v "main" ^| findstr /v "develop" ^| findstr /v "trunk"') do (
-  set merged=!merged! %%a
+  set merged=!merged!%%a
+	set merged=!merged!^
+
 )
 
 if not defined merged (
