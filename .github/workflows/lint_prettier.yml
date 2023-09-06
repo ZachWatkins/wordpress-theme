@@ -27,7 +27,7 @@ jobs:
             contents: read
         runs-on: 'ubuntu-latest'
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: zachwatkins/.github/.github/actions/node-npm-setup@main
 
             - name: Run linter
